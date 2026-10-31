@@ -1,0 +1,1292 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南京三日 · 11.9–11.11</title>
+<style>
+  :root{
+    --ink:#1c2433; --ink-2:#3d4a5c; --muted:#7b8798; --line:#e3e7ee; --bg:#f5f6f9; --card:#fff;
+    --red:#a8323a; --red-soft:#fbf0f1; --blue:#24546e; --blue-soft:#eef4f8;
+    --gold:#9a7a3f; --gold-soft:#faf5e9; --green:#2f6b52; --green-soft:#edf6f1;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+  header{background:linear-gradient(135deg,#1c2433 0%,#243447 55%,#2c4258 100%);color:#fff;
+    padding:38px 0 30px;margin-bottom:26px;border-bottom:4px solid var(--red);}
+  header .wrap{padding-bottom:0;}
+  .kicker{font-size:12px;letter-spacing:.22em;color:#a9b8c7;text-transform:uppercase;margin-bottom:10px;}
+  h1{font-size:30px;margin:0 0 8px;letter-spacing:.02em;font-weight:600;}
+  .sub{font-size:14px;color:#c6d2de;margin:0;}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .fact{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:6px;
+    padding:6px 12px;font-size:13px;color:#e6edf4;}
+  .fact b{color:#fff;font-weight:600;}
+  section{margin-bottom:26px;}
+  h2{font-size:19px;margin:0 0 14px;padding-left:12px;border-left:4px solid var(--red);line-height:1.3;font-weight:600;}
+  h2 small{font-size:12px;color:var(--muted);font-weight:400;margin-left:8px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;}
+  th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+  th{background:#f0f3f7;font-weight:600;font-size:12.5px;color:var(--ink-2);letter-spacing:.03em;white-space:nowrap;}
+  td.time{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--red);font-weight:600;width:112px;}
+  tr:last-child td{border-bottom:none;}
+  .scroll{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:10px;}
+  .scroll table{min-width:820px;}
+  .day{margin-bottom:22px;}
+  .day-head{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px 10px 0 0;border-bottom:none;padding:14px 18px;}
+  .day-no{flex:0 0 auto;width:52px;height:52px;border-radius:8px;background:var(--ink);color:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1;}
+  .day-no span{font-size:9px;letter-spacing:.14em;opacity:.65;}
+  .day-no b{font-size:17px;font-weight:600;}
+  .day-tit{flex:1;}
+  .day-tit h3{margin:0;font-size:16.5px;font-weight:600;}
+  .day-tit p{margin:2px 0 0;font-size:12.5px;color:var(--muted);}
+  .day-body{background:#fff;border:1px solid var(--line);border-radius:0 0 10px 10px;overflow:hidden;}
+  .alert{display:flex;gap:12px;padding:12px 16px;border-radius:8px;font-size:13px;margin-bottom:12px;border:1px solid;}
+  .alert-i{flex:0 0 auto;font-weight:700;font-size:13px;}
+  .alert.red{background:var(--red-soft);border-color:#f2d3d6;color:#7d2027;}
+  .alert.blue{background:var(--blue-soft);border-color:#d3e3ee;color:#1d4356;}
+  .alert.gold{background:var(--gold-soft);border-color:#ecdfbf;color:#6d5527;}
+  .tag{display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:4px;background:#eef1f5;
+    color:#516174;margin-left:4px;white-space:nowrap;}
+  .tag.must{background:#fbe4e6;color:#97252d;}
+  .tag.free{background:#e6f2ea;color:#266148;}
+  .tag.tk{background:#fdf1d8;color:#7a5a1c;}
+  .tag.taxi{background:#e9eef9;color:#33487a;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr;}}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .mini h4{margin:0 0 8px;font-size:14px;color:var(--ink);font-weight:600;}
+  .mini p{margin:0;font-size:13px;color:var(--ink-2);}
+  .mini ul{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2);}
+  .mini li{margin-bottom:4px;}
+  .chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;}
+  .chain .node{background:#fff;border:1px solid var(--line);border-radius:20px;padding:5px 13px;color:var(--ink-2);}
+  .chain .arw{color:#b6c0cd;font-size:12px;}
+  .chain .node.hi{background:#fbe4e6;border-color:#f2cfd2;color:#97252d;font-weight:600;}
+  .money{font-variant-numeric:tabular-nums;}
+  .total{margin-top:12px;background:var(--ink);color:#fff;border-radius:8px;padding:12px 16px;
+    display:flex;justify-content:space-between;align-items:center;font-size:14px;}
+  .total b{font-size:20px;}
+  footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.8;}
+  footer a{color:#4a6785;text-decoration:none;border-bottom:1px dotted #b9c7d6;}
+  @media print{
+    body{background:#fff;}
+    header{padding:20px 0;border-bottom:3px solid #a8323a;}
+    .day,.card,.mini,.scroll{break-inside:avoid;}
+    .scroll table{min-width:0;}
+    a{color:inherit;text-decoration:none;}
+  }
+</style>
+<style id="polish">
+  /* ================= 视觉升级 ================= */
+  body{
+    background:
+      radial-gradient(1200px 620px at 50% -260px, #eceff5 0%, rgba(236,239,245,0) 72%),
+      linear-gradient(180deg,#f7f8fb 0%,#f2f4f8 100%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1040px;}
+
+  /* 头部 */
+  header{
+    position:relative;overflow:hidden;padding:46px 0 36px;
+    border-bottom:none;
+    background:
+      radial-gradient(820px 380px at 92% -20%, rgba(168,50,58,.42) 0%, rgba(168,50,58,0) 62%),
+      radial-gradient(680px 360px at 4% 118%, rgba(36,84,110,.62) 0%, rgba(36,84,110,0) 58%),
+      linear-gradient(135deg,#151b25 0%,#202a39 48%,#29394b 100%);
+  }
+  header::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 46px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 46px);
+    mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.15) 78%,transparent 100%);
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.15) 78%,transparent 100%);
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+    background:linear-gradient(90deg,#a8323a 0%,#c46a4c 38%,#9a7a3f 66%,#2f6b52 100%);
+  }
+  header .wrap{position:relative;z-index:1;}
+  .kicker{font-size:11px;letter-spacing:.34em;color:#93a6b8;margin-bottom:14px;}
+  h1{font-size:34px;letter-spacing:.055em;font-weight:600;margin-bottom:10px;}
+  .sub{font-size:13.5px;color:#b9c6d4;max-width:760px;line-height:1.8;}
+  .seal{
+    position:absolute;right:2px;top:34px;width:66px;height:66px;
+    border:2px solid rgba(214,138,124,.5);border-radius:9px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:#e5aea4;font-size:15px;font-weight:600;letter-spacing:.16em;line-height:1.4;
+    box-shadow:inset 0 0 0 1px rgba(214,138,124,.16);
+    opacity:.9;
+  }
+  .facts{gap:8px;margin-top:26px;}
+  .fact{
+    padding:7px 16px;border-radius:999px;font-size:12.5px;letter-spacing:.02em;
+    background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+
+  /* 标题 */
+  section{margin-bottom:28px;}
+  h2{
+    display:flex;align-items:center;gap:10px;font-size:18px;
+    border-left:none;padding-left:0;margin-bottom:16px;letter-spacing:.02em;
+  }
+  h2::before{
+    content:"";flex:0 0 auto;width:3px;height:19px;border-radius:2px;
+    background:linear-gradient(180deg,#a8323a,#c46a4c);
+  }
+  h2 small{font-size:11.5px;letter-spacing:.02em;}
+
+  /* 提示条 */
+  .alert{
+    padding:15px 18px;border-radius:12px;align-items:flex-start;
+    box-shadow:0 1px 2px rgba(16,24,40,.04), 0 10px 26px -24px rgba(16,24,40,.7);
+  }
+  .alert-i{
+    width:28px;height:28px;flex:0 0 28px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;font-size:11px;font-weight:600;
+    box-shadow:0 0 0 1px currentColor inset;
+  }
+  .alert > div:last-child{line-height:1.75;}
+
+  /* 日程卡 */
+  .day{margin-bottom:26px;}
+  .day-head{
+    padding:16px 20px;border-color:#e6eaf1;
+    box-shadow:0 1px 2px rgba(16,24,40,.05);
+    background:linear-gradient(180deg,#ffffff 0%,#fbfcfe 100%);
+  }
+  .day-no{
+    width:56px;height:56px;border-radius:12px;
+    background:linear-gradient(145deg,#2c3e51,#161c27);
+    box-shadow:0 10px 22px -14px rgba(22,28,39,.9);
+  }
+  .day-tit h3{font-size:17px;letter-spacing:.02em;}
+  .day-tit p{font-size:12.5px;letter-spacing:.01em;}
+  .day-body{
+    border-color:#e6eaf1;
+    box-shadow:0 18px 40px -34px rgba(16,24,40,.85);
+  }
+
+  /* 表格 */
+  .scroll{
+    border-color:#e6eaf1;border-radius:12px;
+    box-shadow:0 14px 34px -30px rgba(16,24,40,.85);
+  }
+  th{
+    background:linear-gradient(180deg,#f4f6fa 0%,#edf1f6 100%);
+    font-size:11.5px;letter-spacing:.06em;color:#6b798d;
+    padding:11px 14px;border-bottom:1px solid #e6eaf1;
+  }
+  td{padding:12px 14px;line-height:1.62;}
+  td.time{
+    color:#9e2f37;font-size:12.5px;font-variant-numeric:tabular-nums;
+    border-right:1px solid #f1f4f8;
+  }
+  .scroll tbody tr:nth-child(even) td{background:#fafbfd;}
+  .scroll tbody tr:hover td{background:#f6f9fc;}
+  tr:last-child td{border-bottom:none;}
+
+  /* 小卡 */
+  .card,.mini{
+    border-radius:14px;border-color:#e6eaf1;padding:18px 20px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 32px -26px rgba(16,24,40,.7);
+  }
+  .mini h4,.card h4{display:flex;align-items:center;gap:8px;font-size:12.5px;
+    letter-spacing:.06em;color:#3d4a5c;font-weight:600;}
+  .mini h4::before,.card h4::before{
+    content:"";width:6px;height:6px;border-radius:50%;background:#a8323a;flex:0 0 auto;
+  }
+  .mini p,.mini ul{font-size:12.8px;}
+  .mini li{margin-bottom:6px;}
+  .tag{border-radius:5px;padding:2px 8px;font-size:11px;letter-spacing:.02em;}
+
+  /* 动线 */
+  .chain{gap:7px;}
+  .chain .node{
+    border-radius:999px;padding:6px 14px;font-size:12.5px;
+    background:#fff;border-color:#e6eaf1;
+    box-shadow:0 1px 2px rgba(16,24,40,.04);
+  }
+  .chain .node.hi{
+    background:linear-gradient(180deg,#fdf2f3,#fbe6e8);
+    border-color:#f0cdd0;color:#9e2f37;
+  }
+  .chain .arw{color:#c6cfda;font-size:11px;}
+
+  /* 费用 */
+  .total{
+    border-radius:10px;
+    background:linear-gradient(120deg,#1b2431 0%,#2a3b4d 100%);
+    box-shadow:0 14px 28px -22px rgba(22,28,39,.9);
+  }
+
+  /* 页脚 */
+  footer{
+    margin-top:40px;padding:20px 22px;border-top:none;
+    background:#fff;border:1px solid #e6eaf1;border-radius:12px;
+    box-shadow:0 1px 2px rgba(16,24,40,.03);
+  }
+
+  @media(max-width:820px){
+    header{padding:34px 0 28px;}
+    h1{font-size:26px;}
+    .seal{display:none;}
+    .sub{font-size:12.8px;}
+  }
+  /* 小地图 */
+  .maps{display:grid;grid-template-columns:1fr;gap:16px;}
+  .map-card{
+    background:#fff;border:1px solid #e6eaf1;border-radius:14px;padding:14px 12px 10px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04), 0 14px 32px -26px rgba(16,24,40,.7);
+  }
+  .map-head{
+    display:flex;align-items:center;gap:7px;margin:0 4px 8px;
+    font-size:11.5px;letter-spacing:.06em;font-weight:600;color:#3d4a5c;
+  }
+  .map-head .dot{width:7px;height:7px;border-radius:50%;flex:0 0 auto;}
+  .dot.d1{background:#9a7a3f;} .dot.d2{background:#24546e;} .dot.d3{background:#2f6b52;}
+  svg.map{width:100%;height:auto;display:block;}
+  .mp-label{fill:#354152;font-size:11.5px;font-weight:600;}
+  .mp-sub{fill:#93a0b0;font-size:9.5px;}
+  .mp-num{fill:#fff;font-size:10px;font-weight:700;dominant-baseline:central;text-anchor:middle;}
+  .mp-metro{stroke:#8ea3b8;stroke-width:2;stroke-dasharray:7 5;}
+  .mp-taxi{stroke:#bd9268;stroke-width:2;stroke-dasharray:2 4;}
+  .mp-walk{stroke:#aab6c4;stroke-width:2;}
+  .map-legend{
+    display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font-size:11px;color:#7b8798;
+  }
+  .map-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .map-legend i{display:inline-block;width:20px;border-top:2px solid #aab6c4;}
+  .map-legend i.dash{border-top:2px dashed #8ea3b8;}
+  .map-legend i.dot{border-top:2px dotted #bd9268;}
+  .leafmap{height:340px;border-radius:10px;overflow:hidden;border:1px solid #eef1f6;}
+  .map-note{font-size:11.5px;color:#8b97a8;margin:10px 4px 0;line-height:1.6;letter-spacing:.02em;}
+  .pin{
+    width:26px;height:26px;border-radius:50%;color:#fff;font:700 12px/1.1 system-ui,sans-serif;
+    display:flex;align-items:center;justify-content:center;border:2px solid #fff;
+    box-shadow:0 2px 8px rgba(16,24,40,.45);
+  }
+  .pinbox{position:relative;width:130px;height:130px;pointer-events:none;}
+  .pnum-i{
+    width:26px;height:26px;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font:700 12px/1 system-ui,sans-serif;border:2px solid;cursor:pointer;
+    box-shadow:0 2px 8px rgba(16,24,40,.3);
+  }
+  .lead{position:absolute;left:0;top:0;pointer-events:none;}
+  .zero{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    font-size:14px;color:#39414a;padding:6px 2px;
+  }
+  .zero b{font-size:20px;font-weight:600;color:#9e2f37;letter-spacing:.02em;}
+  .food-thumb{cursor:zoom-in;}
+  #lightbox{
+    position:fixed;inset:0;background:rgba(16,20,26,.84);z-index:9999;
+    display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;
+  }
+  #lightbox img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.55);}
+
+  /* ================= 入场动画 ================= */
+  body.locked{overflow:hidden;}
+  #intro{
+    position:fixed;inset:0;z-index:10000;background:#0d141a;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    transition:opacity 1.05s cubic-bezier(.4,0,.2,1), transform 1.05s cubic-bezier(.4,0,.2,1);
+  }
+  #intro.bye{opacity:0;transform:scale(1.06);pointer-events:none;}
+  .i-collage{
+    position:absolute;inset:0;display:grid;
+    grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;
+  }
+  .i-collage img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:saturate(.8) contrast(1.06) brightness(.72);
+  }
+  .i-collage img:nth-child(1){animation:kb1 28s ease-out both;}
+  .i-collage img:nth-child(2){animation:kb2 28s ease-out both;}
+  .i-collage img:nth-child(3){animation:kb3 28s ease-out both;}
+  .i-collage img:nth-child(4){animation:kb4 28s ease-out both;}
+  @keyframes kb1{from{transform:scale(1.18) translate3d(1.6%,1.4%,0);}to{transform:scale(1) translate3d(0,0,0);}}
+  @keyframes kb2{from{transform:scale(1.1) translate3d(-1.4%,1.8%,0);}to{transform:scale(1.05) translate3d(0,0,0);}}
+  @keyframes kb3{from{transform:scale(1.14) translate3d(1.2%,-1.6%,0);}to{transform:scale(1.02) translate3d(0,0,0);}}
+  @keyframes kb4{from{transform:scale(1.08) translate3d(-1.6%,-1.2%,0);}to{transform:scale(1.06) translate3d(0,0,0);}}
+  .i-veil{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 50% 44%, rgba(10,15,20,.16) 0%, rgba(10,15,20,.74) 76%, rgba(8,12,16,.92) 100%),
+      linear-gradient(180deg, rgba(8,12,16,.58) 0%, rgba(8,12,16,.12) 44%, rgba(8,12,16,.72) 100%);
+  }
+  .i-center{
+    position:relative;z-index:3;text-align:center;padding:0 24px;
+    animation:iRise 1.9s cubic-bezier(.2,.7,.2,1) .3s both;
+  }
+  .i-eyebrow{font-size:10.5px;letter-spacing:.42em;color:rgba(255,255,255,.6);margin-bottom:24px;}
+  .i-title{
+    font-family:"Songti SC","STSong","Noto Serif SC",Georgia,serif;
+    font-size:78px;letter-spacing:.32em;text-indent:.32em;line-height:1.1;color:#fff;
+    margin:0 0 16px;text-shadow:0 8px 34px rgba(0,0,0,.32);
+  }
+  .i-rule{width:70px;height:1px;margin:0 auto 16px;
+    background:linear-gradient(90deg,rgba(201,167,106,0),#c9a76a,rgba(201,167,106,0));}
+  .i-sub{font-size:12.5px;letter-spacing:.32em;color:rgba(255,255,255,.6);margin:0 0 46px;}
+  .i-btn{
+    position:relative;display:inline-flex;align-items:center;gap:10px;
+    padding:15px 42px;border-radius:999px;cursor:pointer;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.34);color:#fff;
+    font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    font-size:15px;letter-spacing:.2em;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    transition:transform .5s cubic-bezier(.2,.7,.2,1), background .5s, border-color .5s, box-shadow .5s;
+  }
+  .i-btn .heart{font-size:17px;letter-spacing:0;}
+  .i-btn:hover{
+    transform:translateY(-2px) scale(1.03);background:rgba(255,255,255,.14);
+    border-color:rgba(201,167,106,.9);
+    box-shadow:0 16px 46px rgba(0,0,0,.45), inset 0 0 0 1px rgba(201,167,106,.3);
+  }
+  .i-btn::before{
+    content:"";position:absolute;inset:-6px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);animation:halo 3.6s ease-in-out infinite;
+  }
+  @keyframes halo{0%,100%{opacity:.18;transform:scale(.995);}50%{opacity:.55;transform:scale(1.02);}}
+  @keyframes iRise{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+
+  body.entered header{animation:fadeUp .95s cubic-bezier(.2,.7,.2,1) both;}
+  body.entered section{animation:fadeUp .95s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+
+  @media(max-width:600px){
+    .i-title{font-size:54px;letter-spacing:.24em;text-indent:.24em;}
+    .i-sub{letter-spacing:.2em;margin-bottom:36px;}
+    .i-btn{padding:13px 30px;font-size:14px;}
+  }
+  @media(max-width:640px){
+    .wrap{padding:0 14px 44px;}
+    header{padding:36px 0 28px;}
+    h1{font-size:26px;letter-spacing:.04em;}
+    .sub{font-size:12.5px;line-height:1.75;}
+    .facts{gap:6px;margin-top:18px;}
+    .fact{font-size:11.5px;padding:5px 12px;}
+    h2{font-size:16px;}
+    .day-head{padding:13px 14px;gap:11px;}
+    .day-no{width:46px;height:46px;border-radius:10px;}
+    .day-no b{font-size:15px;}
+    th,td{padding:9px 11px;}
+    th{font-size:11px;}
+    .scroll table{min-width:740px;}
+    .food-thumb{width:66px;height:48px;}
+    .leafmap{height:270px;}
+    .grid2,.grid3{gap:12px;}
+    .i-title{font-size:48px;letter-spacing:.22em;text-indent:.22em;}
+  }
+  @media print{#intro{display:none;}}
+  .leaflet-container{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#eef1f5;}
+  .leaflet-popup-content{margin:10px 12px;}
+  .pop img{width:100%;border-radius:8px;display:block;margin-bottom:6px;}
+  .pop-imgs{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px;}
+  .pop-imgs img{height:74px;margin-bottom:0;object-fit:cover;}
+  .pop-name{display:flex;flex-direction:column;gap:2px;margin-bottom:6px;}
+  .pop-name b{font-size:12.5px;color:#1c2433;line-height:1.4;}
+  .pop-name span{font-size:11px;color:#8b97a8;}
+  .pop p{font-size:11.5px;color:#3d4a5c;margin:0;line-height:1.65;}
+  .food-thumb{width:76px;height:54px;object-fit:cover;border-radius:6px;display:block;background:#eef1f5;}
+  @media(max-width:820px){.leafmap{height:300px;}}
+  @media(max-width:900px){.maps{grid-template-columns:1fr;}}
+
+  /* ================= 金陵风物主题层 ================= */
+  body{
+    background:
+      radial-gradient(1000px 500px at 50% -240px, #efe9dc 0%, rgba(239,233,220,0) 72%),
+      #f6f3ec;
+  }
+  header{
+    padding:54px 0 40px;
+    background:
+      radial-gradient(760px 360px at 90% -16%, rgba(176,138,68,.30) 0%, rgba(176,138,68,0) 62%),
+      radial-gradient(680px 340px at 2% 118%, rgba(74,107,115,.55) 0%, rgba(74,107,115,0) 60%),
+      linear-gradient(135deg,#141b22 0%,#1b2530 48%,#25333d 100%);
+  }
+  header::before{
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 26px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 1px, transparent 1px 58px);
+    mask-image:linear-gradient(180deg,#000,rgba(0,0,0,.35) 70%,transparent);
+    -webkit-mask-image:linear-gradient(180deg,#000,rgba(0,0,0,.35) 70%,transparent);
+  }
+  header::after{
+    height:6px;opacity:.95;
+    background:repeating-linear-gradient(90deg,#a8323a 0 22px,#8c2830 22px 44px),#a8323a;
+  }
+  h1{
+    font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+    font-size:40px;font-weight:600;letter-spacing:.16em;margin:0 0 12px;
+  }
+  .tagline{
+    font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    font-size:12.5px;font-weight:400;letter-spacing:.06em;
+    color:#ffffff;margin-left:16px;white-space:nowrap;vertical-align:middle;
+  }
+  .sub{font-size:13px;letter-spacing:.12em;color:#b3c0cd;max-width:760px;}
+  h2{
+    font-family:"Songti SC","STSong","Noto Serif SC",Georgia,serif;
+    font-size:19px;letter-spacing:.08em;
+  }
+  h2::before{height:20px;background:linear-gradient(180deg,#a8323a,#b08a44);}
+
+  /* 顶部提示：低调处理 */
+  .alert{
+    background:#fdfbf6;border:1px solid #ece5d7;border-left:3px solid #c9bda1;
+    box-shadow:none;padding:12px 16px;gap:10px;color:#39414a;font-size:12.8px;
+  }
+  .alert.red{border-left-color:#b1555b;color:#39414a;}
+  .alert.gold{border-left-color:#b08a44;color:#39414a;}
+  .alert.blue{border-left-color:#5f818b;color:#39414a;}
+  .alert-i{
+    width:auto;height:auto;flex:0 0 auto;border-radius:0;background:none;box-shadow:none;
+    color:#9c9182;font-size:11px;font-weight:600;letter-spacing:.1em;padding-top:2px;
+  }
+  .alert > div:last-child b{color:#2c3238;}
+
+  /* 纸质卡面 */
+  .scroll,.card,.mini,.day-head,.day-body,.map-card{border-color:#e7e0d2;}
+  .day-head{background:linear-gradient(180deg,#fffdf8,#fbf8f1);}
+  .day-no{background:linear-gradient(145deg,#3f4b55,#242d35);}
+  th{background:linear-gradient(180deg,#f2efe6,#eae6da);color:#6b6455;}
+  .scroll tbody tr:nth-child(even) td{background:#fbf9f4;}
+  .scroll tbody tr:hover td{background:#f7f2e6;}
+  .food-thumb{box-shadow:0 0 0 1px #e7e0d2;}
+  .map-note,.map-legend{color:#8b8272;}
+  footer{color:#8b8272;}
+
+  @media print{
+    body{background:#fff;background-image:none;}
+    header{background:#1c2433 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    header::before{display:none;}
+    .seal{display:none;}
+    .card,.mini,.scroll,.day-body,footer{box-shadow:none;}
+  }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+
+<div id="intro">
+  <div class="i-collage">
+    <img src="assets/real-fuzimiao.jpg" alt="">
+    <img src="assets/real-wutong.jpg" alt="">
+    <img src="assets/real-mausoleum.jpg" alt="">
+    <img src="assets/real-laomendong.jpg" alt="">
+  </div>
+  <div class="i-veil"></div>
+  <div class="i-center">
+    <div class="i-eyebrow">NANJING&nbsp;&nbsp;·&nbsp;&nbsp;11.9 — 11.11</div>
+    <div class="i-title">南京</div>
+    <div class="i-rule"></div>
+    <div class="i-sub">六朝烟水 · 梧桐满城</div>
+    <button id="enterBtn" class="i-btn"><span class="heart">❤️</span>计划出行</button>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <h1>南京三日<span class="tagline">—小花卷出行计划ovo</span></h1>
+    <p class="sub">2026.11.9 — 11.11 &nbsp;·&nbsp; 2 人 &nbsp;·&nbsp; 住南京南站诺富特酒店</p>
+    <div class="facts">
+      <div class="fact">到达 <b>11.9 18:00 南京南站</b></div>
+      <div class="fact">返程 <b>11.11 17:26</b></div>
+      <div class="fact">11.10 / 11.11 <b>均 10:30 出门</b></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="alert red">
+      <div class="alert-i">01</div>
+      <div><b>南京博物院周一闭馆，中山陵周一闭馆。</b>两处分别排在 11.10（周二）与 11.11（周三）。</div>
+    </div>
+    <div class="alert gold">
+      <div class="alert-i">02</div>
+      <div><b>南京博物院要抢票：11 月 3 日 18:00 放 11 月 10 日的票。</b>官方微信小程序「南京博物院」，免费实名预约，提前 7 天一次性放票、约满即止，当天不再放票。全程只有这一项"约不到就进不去"，请设闹钟。</div>
+    </div>
+    <div class="alert blue">
+      <div class="alert-i">03</div>
+      <div><b>11.11 车票 17:26，16:30 拿完行李离开酒店。</b>这一天要把午饭、取行李、地铁三段都踩准：<b>15:35 结束用餐</b>、16:30 出酒店门、16:45 到南京南站。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>白天去什么、晚上去什么<small>夜晚以步行看灯为主，节奏更轻松</small></h2>
+    <div class="grid3">
+      <div class="mini">
+        <h4>白天（有闭馆时间，只能白天）</h4>
+        <ul>
+          <li><b>南京博物院</b>：9:00–17:00，16:00 停止检票</li>
+          <li><b>钟山</b>：中山陵 8:30–17:00；梧桐大道、音乐台靠自然光</li>
+          <li><b>新街口</b>：商场 10:00 后开门，白天逛街最顺</li>
+        </ul>
+      </div>
+      <div class="mini">
+        <h4>傍晚—夜晚（灯光是主角，全部免费）</h4>
+        <ul>
+          <li><b>夫子庙秦淮河畔</b>：18:00 后灯亮，沿河步行即可看灯影，不必坐船</li>
+          <li><b>乌衣巷、天下文枢牌坊</b>：夜景比白天出片</li>
+          <li><b>老门东</b>：灯笼、青砖巷、小吃摊，20:00 后最有味道</li>
+          <li><b>百家湖 1912</b>：第一晚吃大排档后临湖散步</li>
+        </ul>
+      </div>
+      <div class="mini">
+        <h4>结论</h4>
+        <p>上午给博物馆 / 钟山，下午给新街口，日落后全部留给秦淮（夫子庙—老门东）。这条顺序也是最省地铁换乘的走法。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="day">
+      <div class="day-head">
+        <div class="day-no"><span>DAY</span><b>1</b></div>
+        <div class="day-tit">
+          <h3>11.9 周一 · 抵达 + 海底捞大排档</h3>
+          <p>南京南站 → 酒店 → 江宁金鹰「海底捞大排档火锅」→ 百家湖夜景</p>
+        </div>
+      </div>
+      <div class="day-body scroll">
+        <table>
+          <thead>
+            <tr><th>时间</th><th>安排</th><th>怎么走 / 花费</th><th>要点</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time">18:00–18:20</td>
+              <td>南京南站 → 酒店</td>
+              <td>地铁 3 号线（往林场方向）2 站到<b>大明路站</b>，1 号口出，步行 1 分钟<span class="tag taxi">行李多可打车约 10 分钟</span></td>
+              <td>出站即酒店，全程约 15 分钟</td>
+            </tr>
+            <tr>
+              <td class="time">18:20–19:00</td>
+              <td>办理入住</td>
+              <td>—</td>
+              <td>顺手确认：11.11 上午退房后行李可寄存前台</td>
+            </tr>
+            <tr>
+              <td class="time">19:00–19:20</td>
+              <td>前往海底捞大排档</td>
+              <td>打车至<b>江宁金鹰购物中心</b>（双龙大道 1688 号），约 10 km / 20 分钟 / 约 30 元<span class="tag taxi">推荐打车直达</span></td>
+              <td>南京公开可查的大排档门店只有<b>江宁金鹰店</b>与<b>江北印象汇店</b>两家。江宁金鹰是离你最近的一家；江北店在浦口，单程 25 km 以上，不建议</td>
+            </tr>
+            <tr>
+              <td class="time">19:20–19:50</td>
+              <td>取号等位</td>
+              <td>到店取号，或提前在<b>海底捞 APP / 小程序远程排号</b></td>
+              <td>大排档自开业起长期火爆，高峰排队 1–2 小时。周一晚 20:00 相对好排，仍建议<b>18:50 在酒店就线上取号</b></td>
+            </tr>
+            <tr>
+              <td class="time">19:50–21:20</td>
+              <td>用餐</td>
+              <td>人均约 80–110 元，2 人约 200–240 元</td>
+              <td>与普通海底捞不同：<b>逛吃式自选市集</b>，菜品按盘自取、明档现做，没有传统点单，更像"海鲜火锅大排档"</td>
+            </tr>
+            <tr>
+              <td class="time">21:20–21:50</td>
+              <td>百家湖夜景散步</td>
+              <td>商场旁<b>百家湖 1912 街区</b>（双龙大道 1680 号），步行 3–5 分钟</td>
+              <td>临湖酒吧餐饮街区，灯光与湖面倒影是这一带最好的夜景；不想走可直接回酒店</td>
+            </tr>
+            <tr>
+              <td class="time">21:50–22:15</td>
+              <td>返回酒店</td>
+              <td>地铁 1 号线（百家湖 → 南京南站，约 25 分钟）</td>
+              <td>第二天要逛博物院，早点休息</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="day">
+      <div class="day-head">
+        <div class="day-no"><span>DAY</span><b>2</b></div>
+        <div class="day-tit">
+          <h3>11.10 周二 · 南京博物院 → 新街口 → 夫子庙夜景 → 老门东</h3>
+          <p>一馆、一街、一河、一巷，从北往南一路顺，不走回头路</p>
+        </div>
+      </div>
+      <div class="day-body scroll">
+        <table>
+          <thead>
+            <tr><th>时间</th><th>安排</th><th>怎么走 / 花费</th><th>要点</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time">09:00–10:00</td>
+              <td><b>本地特色早餐</b></td>
+              <td>酒店步行 10–15 分钟到<b>明发商业广场</b>（丁墙路）：尹氏汤包 / 鸡鸣汤包（南京南站店），人均 20–35 元</td>
+              <td>汤包 + 鸭血粉丝 + 赤豆小元宵是标准南京早餐组合</td>
+            </tr>
+            <tr>
+              <td class="time">10:30–11:05</td>
+              <td>酒店 → 南京博物院</td>
+              <td>3 号线 大明路→大行宫（5 站）换 2 号线→<b>明故宫站</b>（2 站），1 号口出步行 8 分钟</td>
+              <td>约 35 分钟；<b>必须带身份证原件</b>，按预约时段刷证入馆，早到不一定能进</td>
+            </tr>
+            <tr>
+              <td class="time">11:05–11:20</td>
+              <td>检票入馆</td>
+              <td>免费<span class="tag free">已预约</span></td>
+              <td>16:00 停止检票，17:00 闭馆</td>
+            </tr>
+            <tr>
+              <td class="time">11:20–13:30</td>
+              <td>参观（约 2 小时精华路线）</td>
+              <td>—</td>
+              <td>历史馆（镇院之宝：金兽、釉里红梅瓶、竹林七贤砖画）→ 民国馆（地下复原街景，最出片）→ 特展按兴趣取舍。馆内可寄存背包</td>
+            </tr>
+            <tr>
+              <td class="time">13:30–13:50</td>
+              <td>博物院 → 新街口</td>
+              <td>2 号线 明故宫→新街口 3 站（约 6 分钟）；打车约 2 km / 10 元</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="time">13:50–15:00</td>
+              <td><b>午餐：小厨娘淮扬菜</b></td>
+              <td>艾尚天地 B 座 3 楼（中山路 132 号），新街口站 7 号口东行 200 米；人均约 101 元</td>
+              <td>本地口碑稳、环境好：<b>老鸡首味狮子头、太祖金陵脆皮烤鸭、淮扬烫干丝、红豆丸子嫩豆花</b></td>
+            </tr>
+            <tr>
+              <td class="time">15:00–17:10</td>
+              <td>新街口逛街</td>
+              <td>步行即可</td>
+              <td>德基广场（1 期 7 楼有南京大牌档，可作晚餐备选）、金鹰、中央商场；想穿插小吃去<b>明瓦廊</b>，鸭血粉丝、糖芋苗、赤豆元宵都在这条巷子</td>
+            </tr>
+            <tr>
+              <td class="time">17:10–17:40</td>
+              <td>新街口 → 夫子庙</td>
+              <td>2 号线 新街口→大行宫（1 站）换 3 号线→<b>夫子庙站</b>（2 站），2 号口出</td>
+              <td>约 20 分钟，出站就是秦淮河</td>
+            </tr>
+            <tr>
+              <td class="time">17:40–17:50</td>
+              <td>先取晚餐号</td>
+              <td>南京大牌档（平江府店），大石坝街 48 号，从 2 号口步行约 5 分钟</td>
+              <td>晚市排队是常态，<b>先拿号再逛</b>；若等位超过 40 分钟，就改为吃完再逛</td>
+            </tr>
+            <tr>
+              <td class="time">17:50–18:40</td>
+              <td><b>秦淮河畔步行夜景（免费）</b></td>
+              <td>步行，无需门票</td>
+              <td>泮池 → 天下文枢牌坊 → 乌衣巷 → 沿河看灯影和白墙黑瓦；<b>不坐船也能拍到整条河最好的角度</b>（文德桥上向北拍）</td>
+            </tr>
+            <tr>
+              <td class="time">18:40–20:00</td>
+              <td><b>晚餐：南京大牌档（平江府店）</b></td>
+              <td>大石坝街 48 号，人均约 74 元</td>
+              <td>高评分老字号，一站吃遍南京名点：<b>盐水鸭、民国美龄粥、酒酿赤豆元宵、天王烤鸭包、金陵烤鸭</b>。避开景区主街的"秦淮八绝套餐"</td>
+            </tr>
+            <tr>
+              <td class="time">20:00–20:15</td>
+              <td>步行到老门东</td>
+              <td>约 1.2 km / 15 分钟</td>
+              <td>顺剪子巷走，一路是老城南巷子</td>
+            </tr>
+            <tr>
+              <td class="time">20:15–21:30</td>
+              <td><b>老门东夜景 + 小吃</b></td>
+              <td>小吃预算 40–50 元/人</td>
+              <td><b>蒋有记</b>（老门东主街，鸭血粉丝汤 / 牛肉锅贴，秦淮八绝传承店）、<b>小郑酥烧饼</b>（三条营 49 号，鸭油烧饼）、<b>陆氏梅花糕</b>、<b>庙东排骨</b>（甘梅微辣炸排骨）</td>
+            </tr>
+            <tr>
+              <td class="time">21:30–21:50</td>
+              <td>回酒店</td>
+              <td>步行至<b>武定门站</b>（约 8 分钟），3 号线 3 站→大明路</td>
+              <td>老门东离武定门站最近，比折回夫子庙站更省力</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="day">
+      <div class="day-head">
+        <div class="day-no"><span>DAY</span><b>3</b></div>
+        <div class="day-tit">
+          <h3>11.11 周三 · 钟山三点（梧桐大道 + 音乐台 + 中山陵）→ 17:26 返程</h3>
+          <p>10:30 出门，只走三点；13:50 吃午饭，16:55 到南京南站</p>
+        </div>
+      </div>
+      <div class="day-body scroll">
+        <table>
+          <thead>
+            <tr><th>时间</th><th>安排</th><th>怎么走 / 花费</th><th>要点</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time">09:00–10:00</td>
+              <td><b>本地特色早餐</b></td>
+              <td>明发商业广场一带：正春园黑猪肉汤包（万象都荟，06:00–21:00）或鸡鸣汤包；人均 20–35 元</td>
+              <td>想更地道可 8:30 出门去<b>李记清真馆</b>（评事街打钉巷 1 号，牛肉锅贴 + 牛肉汤，5:30–19:30，人均约 20），来回约 50 分钟，之后 10:30 从酒店出发</td>
+            </tr>
+            <tr>
+              <td class="time">10:15–10:30</td>
+              <td>退房 + 寄存行李</td>
+              <td>—</td>
+              <td><b>关键动作</b>：行李寄存前台，下午回来取，别拖着箱子爬中山陵</td>
+            </tr>
+            <tr>
+              <td class="time">10:30–11:05</td>
+              <td>酒店 → 苜蓿园站</td>
+              <td>3 号线 大明路→大行宫（5 站）换 2 号线→<b>苜蓿园站</b>（3 站）</td>
+              <td>约 35 分钟；出站即陵园路北端</td>
+            </tr>
+            <tr>
+              <td class="time">11:05–11:55</td>
+              <td><b>梧桐大道（陵园路）</b></td>
+              <td>步行 2–3 km<span class="tag free">免费</span></td>
+              <td>法桐夹道、金黄落叶，整条路就是取景地；走 50 分钟够拍够逛，不想走可在站口坐景区观光车（约 10 元/人次）</td>
+            </tr>
+            <tr>
+              <td class="time">11:55–12:35</td>
+              <td><b>音乐台</b></td>
+              <td>门票 <b>10 元/人</b><span class="tag tk">现场扫码购票</span></td>
+              <td>弧形草坪看台 + 白鸽群飞；<b>正午前后鸽群仍活跃</b>，拍照坐台阶最高一排</td>
+            </tr>
+            <tr>
+              <td class="time">12:40–13:35</td>
+              <td><b>中山陵</b></td>
+              <td>免费<span class="tag free">预约 12:30–14:30 时段</span></td>
+              <td>博爱广场 → 陵门 → 392 级台阶 → 祭堂（墓室不开放）。台阶中段回望南京城是经典机位。周一闭馆维护，<b>11.11 是周三，正常开放</b></td>
+            </tr>
+            <tr>
+              <td class="time">13:35–13:50</td>
+              <td>打车去餐厅</td>
+              <td>中山陵 → 石象路 7 号「六朝瑞庭」，约 2.5 km / 10 分钟 / 约 12 元</td>
+              <td>就在明孝陵四号门旁，车直接开到门口</td>
+            </tr>
+            <tr>
+              <td class="time">13:50–15:35</td>
+              <td><b>午饭：六朝瑞庭·匠心淮扬菜（中山陵店）</b></td>
+              <td>石象路 7 号（云几向西 50 米），人均约 190 元<span class="tag tk">11:00–21:00 连续营业</span></td>
+              <td>推荐四道招牌：<b>蟹粉狮子头</b>（汤清肉嫩，淮扬刀工的代表）、<b>清炒河虾仁</b>（现剥小河虾，吃的是鲜甜）、<b>大煮干丝</b>（鸡汤煨透，细如发丝）、<b>松鼠鳜鱼</b>（酸甜挂汁，两人可分食）。时令湖鲜按当日菜单再添一道。</td>
+            </tr>
+            <tr>
+              <td class="time">15:35–15:50</td>
+              <td>打车至苜蓿园站</td>
+              <td>约 2 km / 10 分钟 / 约 12 元</td>
+              <td>别走路，这段留着赶车</td>
+            </tr>
+            <tr>
+              <td class="time">15:50–16:25</td>
+              <td>地铁回酒店</td>
+              <td>2 号线 苜蓿园→大行宫 换 3 号线→大明路</td>
+              <td>约 35 分钟</td>
+            </tr>
+            <tr>
+              <td class="time">16:25–16:30</td>
+              <td>前台取行李</td>
+              <td>—</td>
+              <td>直接推着箱子下楼，别回房间；顺手检查充电器、外套、身份证</td>
+            </tr>
+            <tr>
+              <td class="time">16:30–16:45</td>
+              <td>酒店 → 南京南站</td>
+              <td>3 号线 2 站（约 8 分钟）；<b>16:35 还没上地铁就直接打车</b>（约 10 分钟）</td>
+              <td>地铁出站后进站还要走 5–8 分钟，别卡最后一分钟</td>
+            </tr>
+            <tr>
+              <td class="time">16:45–17:26</td>
+              <td>进站安检 + 候车</td>
+              <td>—</td>
+              <td><b>17:26 发车</b>，16:45 到站留 41 分钟，安检进站很从容</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>本地特色早餐<small>都在酒店步行范围内，赶时间也能吃上</small></h2>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin:0 0 10px;font-size:14px;">步行首选（大明路 / 明发商业广场）</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td><b>鸡鸣汤包</b>（南京南站店）</td>
+              <td>汤包、鸭血粉丝汤、赤豆小元宵</td>
+              <td class="money" style="text-align:right;white-space:nowrap;">人均 25</td>
+            </tr>
+            <tr>
+              <td><b>百年尹氏汤包</b>（明发商业广场）</td>
+              <td>老字号汤包、鸡汤馄饨</td>
+              <td class="money" style="text-align:right;white-space:nowrap;">人均 20</td>
+            </tr>
+            <tr>
+              <td><b>正春园黑猪肉汤包</b>（万象都荟）</td>
+              <td>黑猪肉汤包、鸭血粉丝，06:00 开门</td>
+              <td class="money" style="text-align:right;white-space:nowrap;">人均 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h4 style="margin:0 0 10px;font-size:14px;">愿意早起 20 分钟的地道路线</h4>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);">
+          <li><b>李记清真馆</b>（评事街打钉巷 1 号，5:30–19:30，人均约 20）：牛肉锅贴 + 牛肉汤，本地人排队的老店，地铁 1 号线张府园站 3 号口步行 500 米</li>
+          <li><b>芳婆糕团店</b>（王府大街 50 号，04:00–18:30）：蒸饭包油条、酒酿元宵，最能代表"南京人的早饭"</li>
+          <li>这两家都要 8:30 前出门，吃完直接去景点，不必回酒店</li>
+        </ul>
+        <p style="margin-top:10px;color:var(--muted);font-size:12.5px;">若不想折腾：酒店自助早餐即可，把胃留给午饭和夜宵。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>预约清单<small>只有博物院、中山陵必须提前约，其余现场买票</small></h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>项目</th><th>是否要预约</th><th>渠道</th><th>费用</th><th>何时办</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>南京博物院</b></td>
+            <td><span class="tag must">必须，免费但限量</span></td>
+            <td>微信小程序「南京博物院」（官方唯一渠道，未授权第三方）</td>
+            <td>免费</td>
+            <td><b>11.3（周一）18:00 抢 11.10 上午场（9:00–13:00）</b>；提前 7 天一次性放票，约满即止，当天不放票</td>
+          </tr>
+          <tr>
+            <td><b>中山陵</b></td>
+            <td><span class="tag must">必须实名预约</span></td>
+            <td>公众号「南京钟山风景区」/「中山陵园票务中心」/ 美团，或现场自助机</td>
+            <td>免费</td>
+            <td>可约 <b>11.11 12:00–16:00</b> 时段（预约时段：9:00–12:00 / 12:00–16:00）；11.11 周三正常开放</td>
+          </tr>
+          <tr>
+            <td>音乐台</td>
+            <td>不需要预约，买票即入</td>
+            <td>现场扫码 / 钟山风景区购票小程序</td>
+            <td>10 元/人</td>
+            <td>当天</td>
+          </tr>
+          <tr>
+            <td>海底捞大排档</td>
+            <td>不预约，但要排号</td>
+            <td>海底捞 APP / 小程序远程排号，或到店取号</td>
+            <td>人均 80–110 元</td>
+            <td>11.9 18:50 在酒店线上取号</td>
+          </tr>
+          <tr>
+            <td>往返高铁 + 酒店两晚</td>
+            <td>—</td>
+            <td>12306 / 各平台</td>
+            <td>—</td>
+            <td>返程已定 11.11 17:26；去程 11.9 傍晚班次尽早订</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>三天动线一览<small>同一颜色=同一片区，全程不折返</small></h2>
+    <div class="card">
+      <div class="chain" style="margin-bottom:10px;">
+        <span class="node">南京南站</span><span class="arw">→</span>
+        <span class="node">大明路酒店</span><span class="arw">→</span>
+        <span class="node hi">江宁金鹰（大排档）</span><span class="arw">→</span>
+        <span class="node">百家湖 1912</span><span class="arw">→</span>
+        <span class="node">回酒店</span>
+      </div>
+      <div class="chain" style="margin-bottom:10px;">
+        <span class="node">酒店</span><span class="arw">→</span>
+        <span class="node hi">南京博物院</span><span class="arw">→</span>
+        <span class="node hi">新街口</span><span class="arw">→</span>
+        <span class="node hi">夫子庙夜景</span><span class="arw">→</span>
+        <span class="node hi">老门东</span><span class="arw">→</span>
+        <span class="node">武定门站</span><span class="arw">→</span>
+        <span class="node">酒店</span>
+      </div>
+      <div class="chain">
+        <span class="node">酒店</span><span class="arw">→</span>
+        <span class="node hi">苜蓿园</span><span class="arw">→</span>
+        <span class="node hi">梧桐大道</span><span class="arw">→</span>
+        <span class="node hi">音乐台</span><span class="arw">→</span>
+        <span class="node hi">中山陵</span><span class="arw">→</span>
+        <span class="node">六朝瑞庭午饭</span><span class="arw">→</span>
+        <span class="node">酒店取行李</span><span class="arw">→</span>
+        <span class="node">南京南站 17:26</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>小地图版<small>真实地图，点击编号查看对应图片，可拖动与缩放</small></h2>
+    <div class="maps">
+
+      <div class="map-card">
+        <div class="map-head"><span class="dot d1"></span>Day 1 · 11.9 晚</div>
+        <div id="map1" class="leafmap"></div>
+        <p class="map-note">① 南京南站 → ② 诺富特酒店 → ③ 江宁金鹰 · 海底捞大排档 → ④ 百家湖 1912</p>
+      </div>
+
+      <div class="map-card">
+        <div class="map-head"><span class="dot d2"></span>Day 2 · 11.10 全天</div>
+        <div id="map2" class="leafmap"></div>
+        <p class="map-note">① 酒店 → ② 南京博物院 → ③ 新街口 → ④ 夫子庙 → ⑤ 老门东</p>
+      </div>
+
+      <div class="map-card">
+        <div class="map-head"><span class="dot d3"></span>Day 3 · 11.11 返程</div>
+        <div id="map3" class="leafmap"></div>
+        <p class="map-note">① 酒店 → ② 苜蓿园 → ③ 梧桐大道 → ④ 音乐台 → ⑤ 中山陵 → ⑥ 六朝瑞庭 → ⑦ 南京南站</p>
+      </div>
+
+    </div>
+    <div class="map-legend">
+      <span><i></i>步行</span>
+      <span><i class="dash"></i>地铁</span>
+      <span><i class="dot"></i>打车</span>
+      <span style="color:#93a0b0;">连线为示意路线，实际通行以导航为准</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>美食清单<small>都已核对位置与人均，均为本地口碑店</small></h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>时间</th><th>餐厅 / 小吃</th><th>位置</th><th>人均</th><th>必点</th><th>图片</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>11.9 晚</td>
+            <td><b>海底捞大排档火锅</b>（江宁金鹰店）</td>
+            <td>江宁区双龙大道 1688 号 江宁金鹰购物中心</td>
+            <td>80–110 元</td>
+            <td>自选海鲜 / 现切肉 / 明档小吃，按盘取</td>
+            <td><img class="food-thumb" src="assets/real-hotpot.jpg" alt="海底捞"></td>
+          </tr>
+          <tr>
+            <td>11.10 早</td>
+            <td>鸡鸣汤包 / 尹氏汤包</td>
+            <td>南京南站、明发商业广场</td>
+            <td>20–35 元</td>
+            <td>汤包、鸭血粉丝、赤豆小元宵</td>
+            <td><img class="food-thumb" src="assets/real-tangbao.jpg" alt="汤包"></td>
+          </tr>
+          <tr>
+            <td>11.10 午</td>
+            <td><b>小厨娘淮扬菜</b>（新街口艾尚天地旗舰店）</td>
+            <td>中山路 132 号艾尚天地 B 座 3 楼</td>
+            <td>约 101 元</td>
+            <td>狮子头、金陵脆皮烤鸭、烫干丝、嫩豆花</td>
+            <td><img class="food-thumb" src="assets/real-shizitou.jpg" alt="狮子头"></td>
+          </tr>
+          <tr>
+            <td>11.10 晚</td>
+            <td><b>南京大牌档</b>（夫子庙平江府店）</td>
+            <td>大石坝街 48 号</td>
+            <td>约 74 元</td>
+            <td>盐水鸭、美龄粥、赤豆元宵、天王烤鸭包</td>
+            <td><img class="food-thumb" src="assets/real-dapaidang.jpg" alt="南京大牌档"></td>
+          </tr>
+          <tr>
+            <td>11.10 夜</td>
+            <td><b>老门东小吃四连</b></td>
+            <td>老门东三条营一带</td>
+            <td>40–50 元</td>
+            <td>蒋有记鸭血粉丝/锅贴、小郑酥烧饼、陆氏梅花糕、庙东排骨</td>
+            <td><img class="food-thumb" src="assets/real-snacks.jpg" alt="老门东小吃"></td>
+          </tr>
+          <tr>
+            <td>11.11 早</td>
+            <td>正春园汤包 / 李记清真馆（可选）</td>
+            <td>万象都荟 / 评事街打钉巷 1 号</td>
+            <td>20–30 元</td>
+            <td>黑猪肉汤包、牛肉锅贴、牛肉汤</td>
+            <td><img class="food-thumb" src="assets/real-guotie.jpg" alt="汤包与锅贴"></td>
+          </tr>
+          <tr>
+            <td>11.11 午</td>
+            <td><b>六朝瑞庭·匠心淮扬菜</b>（中山陵店）</td>
+            <td>玄武区石象路 7 号（明孝陵四号门旁，云几向西 50 米）</td>
+            <td>约 190 元</td>
+            <td>蟹粉狮子头、清炒河虾仁、大煮干丝、松鼠鳜鱼；湖景位需提前订</td>
+            <td><img class="food-thumb" src="assets/real-shizitou2.jpg" alt="六朝瑞庭淮扬菜"></td>
+          </tr>
+          <tr>
+            <td>备用</td>
+            <td>绿柳居（清真老字号）</td>
+            <td>建康路 68-1 号（夫子庙站 2 号口步行 460 米）</td>
+            <td>约 45 元</td>
+            <td>牛肉锅贴、素菜包、桂花糖芋苗</td>
+            <td><img class="food-thumb" src="assets/real-guotie.jpg" alt="绿柳居小吃"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert blue" style="margin-top:12px;">
+      <div class="alert-i">避坑</div>
+      <div>夫子庙主街的"秦淮八绝套餐"多为预制、价格虚高，<b>正餐去平江府路的南京大牌档，小吃去老门东</b>；想带盐水鸭就买真空装（韩复兴、桂花鸭），别在景区按只称重买。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>费用预估</h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="zero"><span>小杰请ovo</span><b>费用预估 0 元</b></div>
+      </div>
+      <div class="card">
+        <h4 style="margin:0 0 8px;font-size:14px;">省钱与省力提示</h4>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);">
+          <li>门票只需音乐台 10 元/人，中山陵免费，夜景全部步行不花钱</li>
+          <li>地铁扫码即可；3 号线是这三天的"主干线"</li>
+          <li>钟山内移动优先打车（8–10 元），比等观光车省时间</li>
+          <li>博物院免费，但只能在官方小程序约，别买第三方"代约"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>实用贴士与备选方案</h2>
+    <div class="grid2">
+      <div class="mini">
+        <h4>穿衣与随身</h4>
+        <ul>
+          <li>11 月南京约 <b>7–16℃</b>，早晚偏冷，外套 + 薄毛衣即可；钟山风大，加条围巾</li>
+          <li>钟山步行量大，穿<b>舒适运动鞋</b>；落叶地滑</li>
+          <li><b>身份证原件必带</b>（博物院、中山陵、酒店全部刷证）</li>
+          <li>充电宝、纸巾、少量现金</li>
+        </ul>
+      </div>
+      <div class="mini">
+        <h4>三个备选预案</h4>
+        <ul>
+          <li><b>博物院上午场没抢到</b>：改约下午场（12:00 后入馆），把新街口挪到上午、博物院放下午，夫子庙夜景不变</li>
+          <li><b>大排档排队超 1 小时</b>：取号后先逛金鹰，或把用餐改到次日</li>
+          <li><b>11.11 时间超了</b>：跳过梧桐大道步行、改坐观光车直上中山陵；15:35 还没吃完就打包走，<b>16:30 必须拿完行李离开酒店</b>，晚一点就直接打车去南站</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>已核实要点：南京博物院周一闭馆、9:00–17:00（16:00 停止检票）、免费实名预约且提前 7 天 18:00 放票；中山陵周一闭馆维护、免费实名预约（预约时段 9:00–12:00 / 12:00–16:00）；音乐台 10 元；海底捞大排档南京门店为江宁金鹰店与江北印象汇店；酒店为秦淮区大明路 288 号、地铁 3 号线大明路站 1 号口。</p>
+    <p>信息来源：南京博物院官网、南京市中山陵园管理局、南京文旅信息服务平台、南京本地宝、携程/大众点评商户页、海底捞门店系统。<br>票价、预约时段与门店营业时间可能临时调整，出行前一天请在官方小程序/公众号再确认一次。</p>
+  </footer>
+
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  var IMG = {
+    hotpot: "assets/real-hotpot.jpg",
+    lake: "assets/real-lake.jpg",
+    museum: "assets/real-museum.jpg",
+    xinjiekou: "assets/real-xinjiekou.jpg",
+    fuzimiao: "assets/real-fuzimiao.jpg",
+    laomendong: "assets/real-laomendong.jpg",
+    wutong: "assets/real-wutong.jpg",
+    music: "assets/real-music.jpg",
+    mausoleum: "assets/real-mausoleum.jpg",
+    restaurant: "assets/real-shizitou2.jpg"
+  };
+  var HOTEL = ["assets/hotel-1.jpg", "assets/hotel-2.jpg"];
+  var HOTEL_NOTE = "秦淮区大明路 288 号，地铁 3 号线大明路站 1 号口。11.11 上午退房后把行李寄存前台，16:25 回来取。";
+
+  var days = [
+    {
+      id: "map1", color: "#9a7a3f",
+      pts: [
+        {n:1, lat:31.9670, lng:118.7969, name:"南京南站", time:"18:00 抵达", note:"出站乘地铁 3 号线（往林场方向）2 站到大明路站，1 号口出。"},
+        {n:2, lat:31.9863, lng:118.8075, name:"南京南站诺富特酒店", time:"18:20 入住", imgs:HOTEL, note:HOTEL_NOTE},
+        {n:3, lat:31.9318, lng:118.8266, name:"江宁金鹰 · 海底捞大排档", time:"19:20 取号", lab:[-34,-44], imgs:[IMG.hotpot], note:"双龙大道 1688 号，距酒店约 10 km / 打车 20 分钟。逛吃式自选市集，按盘取菜、明档现做；建议 18:50 先在 APP 远程取号。"},
+        {n:4, lat:31.9325, lng:118.8255, name:"百家湖 1912", time:"21:20 散步", lab:[-34,40], imgs:[IMG.lake], note:"商场旁临湖街区，步行 3–5 分钟，灯光与湖面倒影是这一带最好的夜景。"}
+      ],
+      route: [[0,1,'metro'],[1,2,'taxi'],[2,3,'walk']]
+    },
+    {
+      id: "map2", color: "#24546e",
+      pts: [
+        {n:1, lat:31.9863, lng:118.8075, name:"南京南站诺富特酒店", time:"09:00 早餐", imgs:HOTEL, note:HOTEL_NOTE},
+        {n:2, lat:32.0426, lng:118.8294, name:"南京博物院", time:"11:05–13:30", imgs:[IMG.museum], note:"中山东路 321 号。免费实名预约，11.3 18:00 抢 11.10 上午场；带身份证原件，16:00 停止检票。"},
+        {n:3, lat:32.0412, lng:118.7838, name:"新街口", time:"13:50–17:10", imgs:[IMG.xinjiekou], note:"午饭小厨娘（艾尚天地 B 座 3 楼，人均约 101），之后德基、金鹰逛街；小吃去明瓦廊。"},
+        {n:4, lat:32.0206, lng:118.7885, name:"夫子庙 · 秦淮河夜景", time:"17:50–18:40", imgs:[IMG.fuzimiao], note:"免费步行看灯：泮池 → 天下文枢牌坊 → 乌衣巷；拍照走文德桥往北。晚饭南京大牌档平江府店（大石坝街 48 号）。"},
+        {n:5, lat:32.0126, lng:118.7950, name:"老门东", time:"20:15–21:30", imgs:[IMG.laomendong], note:"小吃四连：蒋有记、小郑酥烧饼、陆氏梅花糕、庙东排骨；回程从武定门站上 3 号线。"}
+      ],
+      route: [[0,1,'metro'],[1,2,'metro'],[2,3,'metro'],[3,4,'walk'],[4,0,'metro']]
+    },
+    {
+      id: "map3", color: "#2f6b52",
+      pts: [
+        {n:1, lat:31.9863, lng:118.8075, name:"南京南站诺富特酒店", time:"10:15 退房寄存", imgs:HOTEL, note:HOTEL_NOTE},
+        {n:2, lat:32.0518, lng:118.8290, name:"苜蓿园站", time:"11:05 出站", lab:[-46,30], note:"地铁 2 号线，出站即陵园路北端，梧桐大道从这里开始。"},
+        {n:3, lat:32.0565, lng:118.8310, name:"梧桐大道", time:"11:05–11:55", lab:[-50,-8], imgs:[IMG.wutong], note:"陵园路 2–3 km 法桐夹道，11 月金黄落叶；不想走可坐景区观光车。"},
+        {n:4, lat:32.0610, lng:118.8375, name:"音乐台", time:"11:55–12:35", lab:[-8,-50], imgs:[IMG.music], note:"门票 10 元/人，现场扫码。弧形草坪看台 + 白鸽群飞，坐最高一排拍照。"},
+        {n:5, lat:32.0643, lng:118.8430, name:"中山陵", time:"12:40–13:35", lab:[44,-34], imgs:[IMG.mausoleum], note:"免费，预约 12:00–16:00 时段。392 级台阶到祭堂，台阶中段回望南京城是经典机位。"},
+        {n:6, lat:32.0585, lng:118.8345, name:"六朝瑞庭 · 淮扬菜", time:"13:50–15:35", lab:[44,32], imgs:[IMG.restaurant], note:"石象路 7 号，人均约 190，11:00–21:00 连续营业；湖景位建议提前电话订。15:35 结束用餐。"},
+        {n:7, lat:31.9670, lng:118.7969, name:"南京南站", time:"16:45 到站", note:"17:26 发车。16:30 拿完行李离开酒店，地铁 2 站约 8 分钟；16:35 没上车就打车。"}
+      ],
+      route: [[0,1,'metro'],[1,2,'walk'],[2,3,'walk'],[3,4,'walk'],[4,5,'taxi'],[5,1,'taxi'],[1,0,'metro'],[0,6,'metro']]
+    }
+  ];
+
+  var containers = document.querySelectorAll(".leafmap");
+  if (typeof L === "undefined") {
+    Array.prototype.forEach.call(containers, function(el){
+      el.style.cssText = "display:flex;align-items:center;justify-content:center;color:#8b97a8;font-size:12px;text-align:center;padding:20px;background:#f5f7fa";
+      el.textContent = "地图需要联网加载，请连接网络后刷新页面";
+    });
+    return;
+  }
+
+  var DASH = { metro: "8 6", taxi: "2 6", walk: null };
+
+  days.forEach(function(d){
+    var map = L.map(d.id, { scrollWheelZoom: false, zoomControl: true })
+      .setView([32.02, 118.81], 12);
+
+    L.tileLayer("https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}", {
+      subdomains: ["1", "2", "3", "4"], maxZoom: 18,
+      attribution: "&copy; 高德地图"
+    }).addTo(map);
+
+    d.route.forEach(function(r){
+      var a = d.pts[r[0]], b = d.pts[r[1]], mode = r[2];
+      L.polyline([[a.lat, a.lng], [b.lat, b.lng]], {
+        color: "#aab6c4", weight: 3, opacity: .95,
+        dashArray: DASH[mode] || null, lineCap: "round"
+      }).addTo(map);
+    });
+
+    map.fitBounds(L.latLngBounds(d.pts.map(function(p){ return [p.lat, p.lng]; })), { padding: [32, 32] });
+
+    d.pts.forEach(function(p){
+      var html = '<div class="pop">';
+      if (p.imgs && p.imgs.length > 1) {
+        html += '<div class="pop-imgs">';
+        p.imgs.forEach(function(u){ html += '<img src="' + u + '" alt="">'; });
+        html += "</div>";
+      } else if (p.imgs && p.imgs.length === 1) {
+        html += '<img src="' + p.imgs[0] + '" alt="">';
+      }
+      html += '<div class="pop-name"><b>' + p.n + ". " + p.name + "</b><span>" + p.time + "</span></div>";
+      html += "<p>" + p.note + "</p></div>";
+      var popOpt = { maxWidth: 250, minWidth: 220, autoPan: true };
+
+      if (!p.lab) {
+        L.marker([p.lat, p.lng], {
+          icon: L.divIcon({
+            className: "",
+            html: '<div class="pin" style="background:' + d.color + '">' + p.n + "</div>",
+            iconSize: [26, 26], iconAnchor: [13, 13]
+          }),
+          title: p.name
+        }).addTo(map)
+          .bindTooltip(p.name, { direction: "top", offset: [0, -14] })
+          .bindPopup(html, popOpt);
+        return;
+      }
+
+      var dx = p.lab[0], dy = p.lab[1];
+      var ll = L.latLng(p.lat, p.lng);
+      var mid = "ar-" + d.id + "-" + p.n;
+      var len = Math.sqrt(dx * dx + dy * dy) || 1;
+      var ux = dx / len, uy = dy / len;
+      var sx = 65 + ux * 7, sy = 65 + uy * 7;
+      var ex = 65 + dx - ux * 15, ey = 65 + dy - uy * 15;
+
+      // 引线：只做视觉，不接收任何点击
+      L.marker(ll, {
+        interactive: false,
+        icon: L.divIcon({
+          className: "",
+          html: '<div class="pinbox"><svg class="lead" width="130" height="130">'
+            + '<defs><marker id="' + mid + '" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">'
+            + '<path d="M0,0 L7,3.5 L0,7 Z" fill="' + d.color + '"/></marker></defs>'
+            + '<line x1="' + sx + '" y1="' + sy + '" x2="' + ex + '" y2="' + ey + '" stroke="' + d.color
+            + '" stroke-width="1.6" stroke-linecap="round" marker-end="url(#' + mid + ')"/></svg></div>',
+          iconSize: [130, 130], iconAnchor: [65, 65]
+        })
+      }).addTo(map);
+
+      // 真实位置的小圆点：可点
+      L.circleMarker(ll, {
+        radius: 4.5, weight: 2, color: "#fff", fillColor: d.color, fillOpacity: 1
+      }).addTo(map)
+        .bindTooltip(p.name, { direction: "top", offset: [0, -10] })
+        .bindPopup(html, popOpt);
+
+      // 引出的编号徽章：可点，26px 小热区
+      var target = map.layerPointToLatLng(map.latLngToLayerPoint(ll).add(L.point(dx, dy)));
+      L.marker(target, {
+        icon: L.divIcon({
+          className: "",
+          html: '<div class="pnum-i" style="border-color:' + d.color + ';color:' + d.color + '">' + p.n + '</div>',
+          iconSize: [26, 26], iconAnchor: [13, 13]
+        }),
+        title: p.name
+      }).addTo(map)
+        .bindTooltip(p.name, { direction: "top", offset: [0, -14] })
+        .bindPopup(html, popOpt);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var intro = document.getElementById("intro");
+  var btn = document.getElementById("enterBtn");
+  if (!intro || !btn) return;
+  document.body.classList.add("locked");
+  Array.prototype.forEach.call(document.querySelectorAll("section"), function(s, i){
+    s.style.setProperty("--d", (0.1 + i * 0.07).toFixed(2) + "s");
+  });
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    document.body.classList.remove("locked");
+    document.body.classList.add("entered");
+    intro.classList.add("bye");
+    setTimeout(function(){
+      if (intro.parentNode) intro.parentNode.removeChild(intro);
+    }, 1150);
+  });
+})();
+</script>
+<script>
+(function(){
+  var lb = document.createElement("div");
+  lb.id = "lightbox";
+  lb.innerHTML = '<img alt="">';
+  document.body.appendChild(lb);
+  var pic = lb.querySelector("img");
+  Array.prototype.forEach.call(document.querySelectorAll(".food-thumb"), function(el){
+    el.addEventListener("click", function(){ pic.src = el.src; lb.style.display = "flex"; });
+  });
+  lb.addEventListener("click", function(){ lb.style.display = "none"; });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") lb.style.display = "none"; });
+})();
+</script>
+</body>
+</html>
